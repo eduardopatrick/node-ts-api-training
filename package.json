@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "just praticing",
   "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsc",
     "start": "yarn build && node dist/src/index.js",
     "start:dev": "ts-node-dev 'src/index.ts'",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "style:check":"prettier --check 'src/**/*.ts' 'test/**/*.ts'",
+    "style:check": "prettier --check 'src/**/*.ts' 'test/**/*.ts'",
     "style:fix": "prettier --write 'src/**/*.ts' 'test/**/*.ts'",
     "test": "jest --projects ./jest.config.js ./test/jest.config.js",
     "test:unit": "jest --projects ./jest.config.js --passWithNoTests",
@@ -19,6 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "@overnightjs/core": "^1.7.6",
+    "axios": "^1.18.1",
     "body-parser": "^2.3.0",
     "express": "^5.2.1",
     "module-alias": "^2.3.4",
@@ -27,6 +32,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.6",
     "@eslint/js": "^10.0.1",
+    "@types/axios": "^0.14.4",
     "@types/body-parser": "^1.19.6",
     "@types/express": "^5.0.6",
     "@types/jest": "^30.0.0",
